@@ -1,7 +1,7 @@
 {
   "name": "jcpenney-rum",
   "version": "1.0.0",
-  "description": "",
+  "description": "Real user management POC for JCPenney",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

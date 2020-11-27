@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import FlameGraph from "./AutoSizedFlameGraph";
 
 export default function App() {
-  const [flameGraph, setFlameGraph] = useState(false);
   const [content, setContent] = useState([]);
   const id = window.location.href.substring(
     window.location.href.lastIndexOf("/") + 1
   );
-  setTimeout(() => {
-    setFlameGraph(true);
-  }, 5000);
 
   useEffect(() => {
     fetch(`https://5fc05dcefd14be0016749acf.mockapi.io/v1/rum/${id}`)
@@ -32,7 +28,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {flameGraph ? <FlameGraph flamegraphs={content} /> : <Loading />}
+      {content.length ? <FlameGraph flamegraphs={content} /> : <Loading />}
       <style jsx global>
         {`
           body {
